@@ -35,34 +35,30 @@ namespace BalancedBracketsNS
             string pairOfBrackets = "";
             char[] ch = str.ToCharArray();
 
-            for(int i = 0; i < ch.Length; i++)
+            foreach (char character in ch)
             {
-                if (ch[i] == '[')
+                if (character == '[')
                 {
                     brackets++;
-                    pairOfBrackets += ch[i].ToString();
+                    pairOfBrackets += character.ToString();
                 }
-                else if (ch[i] == ']')
+                else if (character == ']')
                 {
                     brackets--;
-                    pairOfBrackets += ch[i].ToString();
+                    pairOfBrackets += character.ToString();
                 }
             }
 
-            if (pairOfBrackets.IndexOf("]") == 0)
-            {
-                return false;
-            }
+            if (pairOfBrackets.IndexOf("]") == 0) return false;
 
             if (brackets == 0)
             {
                 return true;
             }
-            else 
+            else
             {
                 return false;
             }
-
 
         }
     }
